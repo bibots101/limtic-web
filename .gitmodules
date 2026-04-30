@@ -1,0 +1,7 @@
+[submodule "limtic-frontend"]
+    path = limtic-frontend
+    url = https://github.com/bibots101/limtic-frontend.git
+
+[submodule "limtic-backend"]
+    path = limtic-backend
+    url = https://github.com/bibots101/limtic-backend.git
