@@ -66,9 +66,26 @@ Le projet utilise GitHub Actions pour l'intégration continue :
 [![Java CI with Maven](https://github.com/[USERNAME]/[REPO]/actions/workflows/ci.yml/badge.svg)](https://github.com/[USERNAME]/[REPO]/actions/workflows/ci.yml)
 
 ### Tests locaux
+
+#### Backend — JaCoCo (couverture 81%)
 ```bash
-# Linux/Mac
-./ci-local.sh
+cd limtic-backend
+mvn test jacoco:report
+# Rapport HTML : target/site/jacoco/index.html
+```
+
+#### Frontend — Vitest (couverture 80%)
+```bash
+cd limtic-frontend
+npm install
+npx vitest run --coverage
+# Rapport HTML : coverage/index.html
+```
+
+| Composant | Tests | Couverture |
+|-----------|-------|------------|
+| Backend (JaCoCo) | 360+ | 81% |
+| Frontend (Vitest) | 121 | 80.36% |
 
 # Windows
 ci-local.bat
