@@ -47,6 +47,33 @@ ng serve --ssl
 
 > Accepter les deux certificats avant de tester le login
 
+## CI/CD avec GitHub Actions
+
+Le projet utilise GitHub Actions pour l'intégration continue :
+
+### Workflows automatisés
+- **Tests backend** : `mvn clean test jacoco:report` (Java 17, JaCoCo coverage)
+- **Tests frontend** : `npm run test` (Angular + Vitest)
+- **Rapports de couverture** : Upload automatique vers Codecov
+- **Déclencheurs** : Push/PR sur `main` et `develop`
+
+### Fichiers de configuration
+- `.github/workflows/ci.yml` : Pipeline CI/CD principal
+- Couverture backend : `target/site/jacoco/jacoco.xml`
+- Couverture frontend : `coverage/lcov.info`
+
+### Statut des builds
+[![Java CI with Maven](https://github.com/[USERNAME]/[REPO]/actions/workflows/ci.yml/badge.svg)](https://github.com/[USERNAME]/[REPO]/actions/workflows/ci.yml)
+
+### Tests locaux
+```bash
+# Linux/Mac
+./ci-local.sh
+
+# Windows
+ci-local.bat
+```
+
 ## Comptes de test
 | Email | Mot de passe | Rôle |
 |-------|-------------|------|
